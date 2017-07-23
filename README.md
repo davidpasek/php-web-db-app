@@ -11,7 +11,6 @@ mysql -u root -p
 and run following DB script ...
 
 ```
-mysql -u root -p
 CREATE DATABASE vmware;
 CREATE USER vmware@localhost IDENTIFIED BY 'vmware';
 # allow access from anywehere – NSX DFW will restrict access to MySQL
