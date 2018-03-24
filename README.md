@@ -17,6 +17,7 @@ CREATE USER vmware@localhost IDENTIFIED BY 'vmware';
 GRANT ALL PRIVILEGES ON vmware.* TO vmware IDENTIFIED BY 'vmware' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 show grants;
+use vmware;
 CREATE TABLE access_log (
  ACCESS_TIME DATETIME,
  ACCESS_TO VARCHAR(250),
