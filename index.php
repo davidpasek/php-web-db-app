@@ -113,7 +113,7 @@ NOW(),
 '$ip_HTTP_X_CLUSTER_CLIENT_IP'
 )";
 
-$servername = "172.16.66.172";
+$servername = "localhost";
 $username = "vmware";
 $password = "vmware";
 $dbname = "vmware";
