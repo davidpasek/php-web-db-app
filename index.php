@@ -13,11 +13,11 @@ $hostname = gethostname();
 
 <html>
 <head>
-<title>MSZ-WP01 WEB01 (<?php echo $hostname; ?>)</title>
+<title><?php echo $hostname; ?></title>
 </head>
 
 <body>
-<h1>MSZ-WP01 WEB01 (<?php echo $hostname; ?>)</h1>
+<h1>Hostname: <?php echo $hostname; ?></h1>
 
 <h3>
 <a href="index.php?action=main">ADD DB RECORD</a> | 
