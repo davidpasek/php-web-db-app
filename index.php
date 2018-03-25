@@ -7,9 +7,11 @@ error_reporting(E_ALL);
 # SET THESE PARAMETERS
 ########################################
 $mysql_server = "localhost";
+#$mysql_server = "172.16.11.10";
 $mysql_username = "vmware";
 $mysql_password = "vmware";
 $mysql_dbname = "vmware";
+$max_show_rows = 25;
 ########################################
 
 if (isset($_GET['action'])) {
@@ -162,7 +164,9 @@ switch ($action) {
 	if ($num_of_records > 0) {
 		// output data of each row
 ?>
-Number of records: <?php echo $num_of_records; ?>
+Number of records in DB: <?php echo $num_of_records; ?>
+
+Max number of records to show in table below: <?php echo $max_show_rows; ?>
 		<table border=1>
 		<tr>
 		<th>ACCESS_TIME</th>
@@ -176,7 +180,10 @@ Number of records: <?php echo $num_of_records; ?>
 		<th>HTTP_X_CLUSTER_CLIENT_IP</th>
 		</tr>
 <?php
+		    $i = 0;
 		    while($row = $result->fetch_assoc()) {
+			$i=$i+1;
+			if ($i>$max_show_rows) {break;}
                         echo "<tr>";
 			echo "<td>" . $row["ACCESS_TIME"] . "</td>";
 			echo "<td>" . $row["ACCESS_TO"] . "</td>";
