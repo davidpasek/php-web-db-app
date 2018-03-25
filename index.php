@@ -3,6 +3,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+########################################
+# SET THESE PARAMETERS
+########################################
+$mysql_server = "localhost";
+$mysql_username = "vmware";
+$mysql_password = "vmware";
+$mysql_dbname = "vmware";
+########################################
+
 if (isset($_GET['action'])) {
 	$action = $_GET['action'];
 } else {
@@ -113,13 +122,8 @@ NOW(),
 '$ip_HTTP_X_CLUSTER_CLIENT_IP'
 )";
 
-$servername = "localhost";
-$username = "vmware";
-$password = "vmware";
-$dbname = "vmware";
-
 // Create DB connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($mysql_server, $mysql_username, $mysql_password, $mysql_dbname);
 // Check DB connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
