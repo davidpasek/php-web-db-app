@@ -32,3 +32,4 @@ CREATE TABLE access_log (
 exit
 ```
 
+Dockerization is inspired by https://github.com/mzazon/php-apache-mysql-containerized
